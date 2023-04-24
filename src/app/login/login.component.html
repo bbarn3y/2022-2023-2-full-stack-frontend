@@ -1,1 +1,33 @@
-<p>login works!</p>
+<ng-template #emailErrorTmplt>
+  <ng-container *ngIf="loginForm.controls['email'].hasError('required')">
+    Please provide an e-mail address!
+  </ng-container>
+  <ng-container *ngIf="loginForm.controls['email'].hasError('email')">
+    Please provide a valid e-mail address!
+  </ng-container>
+</ng-template>
+
+<form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control [nzErrorTip]="emailErrorTmplt">
+      <nz-input-group nzPrefixIcon="user">
+        <input type="text" nz-input formControlName="email" placeholder="E-mail address" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your Password!">
+      <nz-input-group nzPrefixIcon="lock">
+        <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <div nz-row class="login-form-margin">
+    <div nz-col [nzSpan]="12">
+      <a class="login-form-forgot">Forgot password</a>
+    </div>
+  </div>
+  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+  Or
+  <a>register now!</a>
+</form>
