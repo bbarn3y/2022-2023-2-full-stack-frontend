@@ -5,7 +5,7 @@ import {AfterViewInit, Component, OnChanges, OnDestroy, OnInit} from '@angular/c
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
+export class LoginComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
