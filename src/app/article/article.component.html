@@ -1,0 +1,36 @@
+<nz-list-item-meta>
+  <nz-list-item-meta-avatar [nzSrc]="article.user.image"
+                            (click)="avatarClicked.emit(article)"></nz-list-item-meta-avatar>
+  <nz-list-item-meta-title>
+    <a href="#">{{ article.title }}</a>
+  </nz-list-item-meta-title>
+  <nz-list-item-meta-description>
+    Created: {{ article.created | date: 'YYYY.MM.dd.' }}
+    <!--
+    <ng-container *ngIf="article.updated">
+      , updated: {{ article.updated | date: 'YYYY.MM.dd' }}
+    </ng-container>
+    -->
+    {{ article.updated ? ', updated ' + (article.updated | date: 'YYYY.MM.dd.') : ''}}
+  </nz-list-item-meta-description>
+</nz-list-item-meta>
+{{ article.content }}
+<!--
+<ul nz-list-item-actions>
+  <nz-list-item-action>
+    <span nz-icon nzType="star-o" style="margin-right: 8px;"></span>
+    156
+  </nz-list-item-action>
+  <nz-list-item-action>
+    <span nz-icon nzType="star-o" style="margin-right: 8px;"></span>
+    156
+  </nz-list-item-action>
+  <nz-list-item-action>
+    <span nz-icon nzType="star-o" style="margin-right: 8px;"></span>
+    2
+  </nz-list-item-action>
+</ul>
+-->
+<nz-list-item-extra>
+  <img alt="logo" src="{{article.image}}" />
+</nz-list-item-extra>

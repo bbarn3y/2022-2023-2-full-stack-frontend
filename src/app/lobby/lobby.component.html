@@ -1,1 +1,8 @@
-<p>lobby works!</p>
+<h1>Articles</h1>
+
+<nz-list nzItemLayout="vertical">
+  <nz-list-item *ngFor="let a of articles">
+    <app-article [article]="a"
+                 (avatarClicked)="window.alert($event.user.name)"></app-article>
+  </nz-list-item>
+</nz-list>

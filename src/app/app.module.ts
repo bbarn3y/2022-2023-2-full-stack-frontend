@@ -16,11 +16,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzInputModule} from "ng-zorro-antd/input";
+import { ArticleComponent } from './article/article.component';
+import {NzListModule} from "ng-zorro-antd/list";
 
 const zorroImports = [
   NzButtonModule,
   NzFormModule,
-  NzInputModule
+  NzInputModule,
+  NzListModule
 ];
 
 registerLocaleData(en);
@@ -28,6 +31,7 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
+    ArticleComponent,
     LoginComponent,
     RegistrationComponent,
     LobbyComponent
