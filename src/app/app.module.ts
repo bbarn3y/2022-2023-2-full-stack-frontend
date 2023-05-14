@@ -1,3 +1,13 @@
+/**
+ * Dynamic configuration
+ * ngx-translate
+ * Control and group level validation
+ * Global events (event.service)
+ * Multi-module project
+ * webpack-bundle-analyzer
+ * pipe?
+ */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
