@@ -13,37 +13,22 @@ import en from '@angular/common/locales/en';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NzFormModule} from "ng-zorro-antd/form";
-import {NzButtonModule} from "ng-zorro-antd/button";
-import {NzInputModule} from "ng-zorro-antd/input";
 import { ArticleComponent } from './article/article.component';
-import {NzListModule} from "ng-zorro-antd/list";
+import {SharedModule} from "src/app/shared/shared.module";
 
-const zorroImports = [
-  NzButtonModule,
-  NzFormModule,
-  NzInputModule,
-  NzListModule
-];
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ArticleComponent,
-    LoginComponent,
-    RegistrationComponent,
-    LobbyComponent
+    AppComponent
   ],
   imports: [
-    ...zorroImports,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
